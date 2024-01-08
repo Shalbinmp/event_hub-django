@@ -1,0 +1,39 @@
+{% extends 'temp/view_templates_user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<form method="post">
+	<table border="1"class="table table-dark">
+		<tr>
+			<th>USER NAME</th>
+            <th>OWNER</th>
+            <th>EVENT AMOUNT</th>
+            <th>FACILITY AMOUNT</th>
+            <th>TOTAL AMOUNT</th>
+			<th>STATUS</th>
+		</tr>
+        {% for i in y %}
+		<tr>
+		<td>{{ i.user.name }}</td>
+            <td>{{ i.em.name }}</td>
+            <td>{{ i.event.amount }}</td>
+            <td>{{ i.facility.amount }}</td>
+		<td>{{ i.amount }}</td>
+		<td>{{ i.status }}</td>
+		<td><a href="/payment/payment/{{ i.booking_id }}" class="btn btn-primary">Pay</a> </td>
+        <td><a href="/event/user_view/{{ i.event }}" class="btn btn-danger">cancel</a>  </td>
+	</tr>
+        {% endfor %}
+    </table>
+
+</form>
+    </center>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'temp/view_templates_event.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event manager</title>
+</head>
+<body>
+	<center>
+		<h2 class="text text-white">owner</h2><br>
+		<form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+			<table>
+				<tr>
+					<td class="text text-white">name</td>
+					<td><input type="text" name="name" required class="form-control" style="width: 250px" value="{{ f.name }}"></td>
+
+				</tr>
+				<tr>
+					<td class="text text-white">password</td>
+					<td><input type="password" name="password"  required class="form-control" ></td>
+				</tr>
+				<tr>
+					<td class="text text-white">phone</td>
+					<td><input type="text" name="phone"  required class="form-control" value="{{ f.phone }}"></td>
+				</tr>
+				<tr>
+				<td class="text text-white">address</td>
+				<td><input type="text" name="address"  required class="form-control" value="{{ f.address }}"></td>
+			</tr>
+			<tr>
+				<td class="text text-white">email</td>
+				<td><input type="text" name="email"  required class="form-control" value="{{ f.emailid }}"></td>
+			</tr>
+			<tr>
+				<td class="text text-white">licence</td>
+				<td><input type="file" name="file"  required class="form-control"></td>
+			</tr>
+            <tr>
+				<td class="text text-white">Image</td>
+				<td><input type="file" name="img"  required class="form-control"></td>
+			</tr>
+                </tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="submit" class="btn btn-primary"></td>
+			</tr>
+            </table>
+		</form>
+  
+	</center>
+
+</body>
+</html>
+{% endblock %}

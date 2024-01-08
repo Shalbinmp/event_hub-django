@@ -1,0 +1,36 @@
+{% extends 'temp/view_templates_event.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<form method="post">
+			<table border="1"class="table table-dark">
+				<tr>
+					<th>SI NO</th>
+					<th>USER</th>
+					<th>OWNER</th>
+					<th>COMPLAINT</th>
+					<th>REPLY</th>
+				</tr>
+                {% for i in z %}
+				<tr>
+					<td>{{ i.complaint_id }}</td>
+					<td>{{ i.user.name}}</td>
+					<td>{{ i.em.name}}</td>
+					<td style="color: red">{{ i.complaint}}</td>
+					<td>{{ i.reply }}</td>
+				</tr>
+                {% endfor %}
+			</table>
+		</form>
+	</center>
+
+</body>
+</html>
+
+{% endblock %}

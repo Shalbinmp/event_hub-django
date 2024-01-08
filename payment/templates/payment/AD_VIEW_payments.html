@@ -1,0 +1,32 @@
+{% extends 'temp/view_templates_admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<form method="post"></form>
+	<table border="1" class="table table-dark">
+		<tr>
+			<th>SINO</th>
+			<th>USER</th>
+			<th>OWNER</th>
+			<th>PAYMENT</th>
+		</tr>
+        {% for i in x %}
+		<tr>
+		<td>{{i.pay_id }}</td>
+		<td>{{ i.user.name }}</td>
+		<td>{{ i.em.name }}</td>
+		<td>{{ i.amount}}</td>
+	</tr>
+         {% endfor %}
+	</table>
+	</center>
+
+
+</body>
+</html>
+{% endblock %}

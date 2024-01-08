@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view_complaint</title>
+</head>
+<body>
+	<center>
+		<form method="post">
+			<table border="1">
+				<tr>
+					<th>COMPLAINT_ID</th>
+					<th>USER</th>
+					<th>OWNER</th>
+					<th>COMPLAINT</th>
+				</tr>
+				<tr>
+                    {% for i in y %}
+					<td>{{i.complaint_id}}</td>
+					<td>{{i.user.name}}</td>
+					<td>{{ i.em.name}}</td>
+					<td>{{ i.complaint }}</td>
+				</tr>
+                 {% endfor %}
+			</table>
+		</form>
+	</center>
+</body>
+</html>

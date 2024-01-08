@@ -1,0 +1,36 @@
+{% extends 'temp/view_templates_user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<form method="post"></form>
+	<table border="1"class="table table-dark">
+		<tr>
+			<th>EM_ID</th>
+			<th>user_id</th>
+			<th>complaint</th>
+			<th>reply</th>
+            <th>date</th>
+            <th>time</th>
+		</tr>
+        {% for i in x %}
+		<tr>
+		<td>{{i.em_id }}</td>
+		<td>{{ i.user_id }}</td>
+		<td>{{i.complaint }}</td>
+		<td style="color: red">{{ i.reply }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.time }}</td>
+	</tr>
+         {% endfor %}
+	</table>
+	</center>
+
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'temp/view_templates_user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<form method="post">
+	<table border="1"class="table table-dark">
+		<tr>
+{#			<th>FACILITIES_ID</th>#}
+			<th>TYPE</th>
+			<th>DESCRIPTION</th>
+			<th>AMOUNT</th>
+			<th>EVENT</th>
+		</tr>
+        {% for i in y %}
+		<tr>
+{#		<td>{{ i.facilites_id }}</td>#}
+		<td>{{ i.type }}</td>
+		<td>{{ i.description }}</td>
+		<td>{{ i.amount }}</td>
+		<td>{{ i.event.name }}</td>
+{#        <td><a href="/booking/ad_bkg/{{ i.facilites_id }}">Book</a> </td>#}
+	</tr>
+        {% endfor %}
+	</table>
+
+</form>
+    	</center>
+</body>
+</html>
+{% endblock %}

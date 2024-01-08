@@ -1,0 +1,41 @@
+{% extends 'temp/view_templates_event.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event</title>
+
+</head>
+<body>
+	<center>
+		<h2>EVENT</h2>
+		<form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+			<table>
+				<tr>
+				<td>event name</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td><input type="text" name="text"></td>
+			</tr>
+                <tr>
+				<td>Amount</td>
+				<td><input type="text" name="am"></td>
+			</tr>
+			<tr>
+				<td>image</td>
+				<td><input type="file" name="choose_file"></td>
+			</tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="submit"></td>
+                </tr>
+			</table>
+		</form>
+	</center>
+
+</body>
+</html>
+{% endblock %}

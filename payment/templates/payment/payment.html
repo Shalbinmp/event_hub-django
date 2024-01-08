@@ -1,0 +1,41 @@
+{% extends 'temp/view_templates_user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Payment</title>
+</head>
+<body>
+	<center>
+		<h2>Payment</h2>
+		<form method="post">
+                    {% csrf_token %}
+			<table >
+				<tr>
+					<td>Card Holder Name</td>
+					<td><input type="text" name="cardholder" class="form-control" required></td>
+				</tr>
+				<tr>
+					<td>CVV</td>
+					<td><input type="text" name="cvv" class="form-control" required></td>
+				</tr>
+				<tr>
+					<td >Account Number</td>
+					<td><input type="text" name="acno" class="form-control" required></td>
+				</tr>
+				<tr>
+					<td>Amount</td>
+					<td><input type="text" value="{{ x.amount }}" name="amount" required class="form-control" readonly></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="PAY" class="btn btn-primary">
+				</tr>
+			</table>
+		</form>
+
+	</center>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+{#		<form method="post"></form>#}
+	<table border="1">
+		<tr>
+			<th>NAME</th>
+			<th>ADDRESS</th>
+			<th>PHONE</th>
+			<th>EMAIL</th>
+
+		</tr>
+                {% for i in x %}
+
+		<tr>
+		<td>{{ i.name }}</td>
+		<td>{{ i.address }}</td>
+		<td>{{ i.phone}}</td>
+		<td>{{ i.email }}</td>
+
+	</tr>
+        {% endfor %}
+	</table>
+	</center>
+
+
+</body>
+</html>

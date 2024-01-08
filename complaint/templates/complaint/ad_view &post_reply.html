@@ -1,0 +1,39 @@
+{% extends 'temp/view_templates_admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<form method="post"></form>
+	<table border="1"class="table table-dark">
+		<tr>
+			<th>USER_ID</th>
+			<th>owner</th>
+			<th>complaint</th>
+			<th>date</th>
+			<th>time</th>
+			<th>reply</th>
+		</tr>
+        {% for i in x %}
+		<tr>
+		<td>{{ i.user_id }}</td>
+		<td>{{ i.em_id }}</td>
+		<td>{{ i.complaint }}</td>
+		<td>{{ i.date }}</td>
+		<td>{{ i.time }}</td>
+			<td>{{ i.reply }}</td>
+		<td><a href="/complaint/send_rply/{{ i.complaint_id }}" class="btn btn-primary">reply</a> </td>
+		
+	</tr>
+        {% endfor %}
+	</table>
+
+	</center>
+
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'temp/view_templates_admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<form method="post"></form>
+	<table border="1"class="table table-dark">
+		<tr>
+			<th>NAME</th>
+			<th>PHONE</th>
+			<th>ADDRESS</th>
+			<th>EMAIL</th>
+			<th>LICENCE</th>
+			<th>STATUS</th>
+		</tr>
+        {% for i in x %}
+		<tr>
+		<td>{{ i.name }}</td>
+		<td>{{ i.phone }}</td>
+		<td>{{ i.address }}</td>
+		<td>{{ i.emailid }}</td>
+            <td>{{ i.license }}</td>
+		<td>{{ i.status}}</td>
+		<td></td>
+            <td><a href="/owner/ ownapp/{{ i.em_id }}" class="btn btn-primary">Approve</a> </td>
+            <td><a href="/owner/ rrrrr/{{ i.em_id }}" class="btn btn-light">Reject</a> </td>
+	</tr>
+        {% endfor %}
+	</table>
+
+	</center>
+
+
+</body>
+</html>
+{% endblock %}
